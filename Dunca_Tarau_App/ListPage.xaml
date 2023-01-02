@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Dunca_Tarau_App.ListPage"
+             Title="ListPage">
+    <ContentPage.Content>
+        <StackLayout Margin="20">
+        <Editor Placeholder="Enter the description of the tour list"
+ Text="{Binding Description}"
+ HeightRequest="100" />
+            <Picker x:Name="CountryPicker" Title="Enter Country Name"/>
+            <Picker x:Name="TourCategoryPicker" Title="Enter TourCategory Name"/>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button Text="Save"
+ Clicked="OnSaveButtonClicked" />
+            <Button Grid.Column="1"
+ Text="Delete"
+ Clicked="OnDeleteButtonClicked"/>
+        </Grid>
+    </StackLayout>    </ContentPage.Content>
+</ContentPage>

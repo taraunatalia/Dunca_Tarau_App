@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Dunca_Tarau_App.CountryPage"
+             Title="CountryPage">
+    <ContentPage.Content>
+        <StackLayout Margin="20">
+            <Editor Placeholder="Enter country name" Margin="20"
+ Text="{Binding CountryName}"
+ HeightRequest="50" />
+            
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Button Text="Save Country" Grid.Column="0"
+MaximumWidthRequest="150"
+ Clicked="OnSaveButtonClicked" />
+                <Button Text="Show on Map" Grid.Column="2"
+MaximumWidthRequest="150"
+ Clicked="OnShowMapButtonClicked"></Button>
+                <Button Text="Delete Country" Grid.Column="1"
+MaximumWidthRequest="150"
+ Clicked="OnDeleteButtonClicked" />
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
