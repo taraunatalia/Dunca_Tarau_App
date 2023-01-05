@@ -37,6 +37,24 @@ public partial class ListPage : ContentPage
         await Navigation.PopAsync();
     }
 
+
+
+    async void OnEditButtonClicked(object sender, EventArgs e)
+    {
+        var slist = (TourList)BindingContext;
+        slist.Date = DateTime.UtcNow;
+
+        Country selectedCountry = (CountryPicker.SelectedItem as Country);
+
+
+        TourCategory selectedShop = (TourCategoryPicker.SelectedItem as TourCategory);
+
+        await App.Database.SaveTourListAsync(slist);
+        await Navigation.PopAsync();
+    }
+
+
+
     protected override async void OnAppearing()
     {
         base.OnAppearing();

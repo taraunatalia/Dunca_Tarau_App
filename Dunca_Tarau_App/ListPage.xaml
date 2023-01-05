@@ -5,22 +5,29 @@
              Title="ListPage">
     <ContentPage.Content>
         <StackLayout Margin="20">
-        <Editor Placeholder="Enter the description of the tour list"
- Text="{Binding TourDescription}"
- HeightRequest="100" />
+            <Editor Placeholder="Enter the description of the tour list"
+                    Text="{Binding TourDescription}"
+                    HeightRequest="100" />
             <Picker x:Name="CountryPicker" Title="Enter Country Name"/>
             <Picker x:Name="TourCategoryPicker" Title="Enter TourCategory Name"/>
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-            <Button Text="Save"
- Clicked="OnSaveButtonClicked" />
-            <Button Grid.Column="1"
- Text="Delete"
- Clicked="OnDeleteButtonClicked"/>
-        </Grid>
-    </StackLayout>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Button Text="Save"
+                        Clicked="OnSaveButtonClicked" 
+                        MaximumWidthRequest="300"/>
+                <Button Grid.Column="1"
+                        Text="Delete"
+                        Clicked="OnDeleteButtonClicked"
+                        MaximumWidthRequest="300"/>
+                <Button Grid.Column="2"
+                        Text="Edit"
+                        Clicked="OnEditButtonClicked"
+                        MaximumWidthRequest="300"/>
+            </Grid>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>
