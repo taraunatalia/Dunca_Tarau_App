@@ -8,6 +8,9 @@
             <Editor Placeholder="Enter the description of the tour list"
                     Text="{Binding TourDescription}"
                     HeightRequest="100" />
+            <Editor Placeholder="Enter the description of the tour list"
+                    Text="{Binding StartingTourDate}"
+                    HeightRequest="100" />
             <Picker x:Name="CountryPicker" Title="Enter Country Name"/>
             <Picker x:Name="TourCategoryPicker" Title="Enter TourCategory Name"/>
             <Grid>

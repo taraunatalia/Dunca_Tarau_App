@@ -14,7 +14,7 @@ namespace Dunca_Tarau_App.Models
         public int ID { get; set; }
         [MaxLength(250), Unique]
         public string TourDescription { get; set; }
-        
+        public DateTime StartingTourDate { get; set; }
         public DateTime Date { get; set; }
         [ForeignKey(typeof(Country))]
         public int CountryID { get; set; }
