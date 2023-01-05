@@ -4,16 +4,22 @@ namespace Dunca_Tarau_App;
 
 public partial class ListEntryPage : ContentPage
 {
-	public ListEntryPage()
+    private object listView;
+
+    public ListEntryPage()
 	{
 		InitializeComponent();
 	}
 
+    private void InitializeComponent()
+    {
+        throw new NotImplementedException();
+    }
+
     protected override async void OnAppearing()
     {
         base.OnAppearing();
-        var tourLists = await App.Database.GetTourListsAsync();
-        listView.ItemsSource = tourLists;
+        listView.ItemsSource = await App.Database.GetTourListsAsync();
     }
     async void OnTourListAddedClicked(object sender, EventArgs e)
     {
@@ -32,5 +38,4 @@ public partial class ListEntryPage : ContentPage
             });
         }
     }
-
 }

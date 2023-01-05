@@ -1,7 +1,6 @@
 ﻿using System;
 using Dunca_Tarau_App.Data;
 using System.IO;
-
 namespace Dunca_Tarau_App;
 
 public partial class App : Application
@@ -13,14 +12,13 @@ public partial class App : Application
         {
             if (database == null)
             {
-                var path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "TourList.db3");
-
-                database = new TourListDatabase(path); 
+                database = new
+               TourListDatabase(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.
+               LocalApplicationData), "TourList.db3"));
             }
             return database;
         }
     }
-
     public App()
 	{
 		InitializeComponent();

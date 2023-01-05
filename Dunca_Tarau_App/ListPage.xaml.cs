@@ -8,7 +8,11 @@ public partial class ListPage : ContentPage
 	public ListPage()
 	{
 		InitializeComponent();
+
+       
 	}
+
+ 
 
     async void OnSaveButtonClicked(object sender, EventArgs e)
     {
@@ -37,17 +41,16 @@ public partial class ListPage : ContentPage
     {
         base.OnAppearing();
 
+
         var items = await App.Database.GetCountriesAsync();
-        CountryPicker.ItemsSource = (System.Collections.IList)items;
-        CountryPicker.ItemDisplayBinding = new Binding("CountryDetails");
-
-
-
+        
+        CountryPicker.ItemsSource = items;
+        CountryPicker.ItemDisplayBinding = new Binding("CountryName");
 
         var tems = await App.Database.GetTourCategoriesAsync();
-        TourCategoryPicker.ItemsSource = (System.Collections.IList)tems;
-        TourCategoryPicker.ItemDisplayBinding = new Binding("TourCategoryDetails");
-
+        
+        TourCategoryPicker.ItemsSource = tems;
+        TourCategoryPicker.ItemDisplayBinding = new Binding("TourCategoryName");
 
         /*var shopl = (TourList)BindingContext;
 

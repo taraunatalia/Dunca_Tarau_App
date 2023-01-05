@@ -3,24 +3,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Dunca_Tarau_App.ListPage"
              Title="ListPage">
-    <ContentPage.Content>
-        <StackLayout Margin="20">
+    <StackLayout Margin="20">
         <Editor Placeholder="Enter the description of the tour list"
- Text="{Binding TourDescription}"
- HeightRequest="100" />
-            <Picker x:Name="CountryPicker" Title="Enter Country Name"/>
-            <Picker x:Name="TourCategoryPicker" Title="Enter TourCategory Name"/>
+                Text="{Binding Description}"
+                HeightRequest="100" />
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <Button Text="Save"
- Clicked="OnSaveButtonClicked" />
+                    Clicked="OnSaveButtonClicked" />
             <Button Grid.Column="1"
- Text="Delete"
- Clicked="OnDeleteButtonClicked"/>
+                    Text="Delete"
+                    Clicked="OnDeleteButtonClicked"/>
         </Grid>
     </StackLayout>
-    </ContentPage.Content>
 </ContentPage>
