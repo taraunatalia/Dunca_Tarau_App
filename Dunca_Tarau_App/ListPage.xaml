@@ -7,10 +7,10 @@
         <StackLayout Margin="20">
             <Editor Placeholder="Enter the description of the tour list"
                     Text="{Binding TourDescription}"
-                    HeightRequest="100" />
+                    HeightRequest="50" />
             <Editor Placeholder="Enter the description of the tour list"
                     Text="{Binding StartingTourDate}"
-                    HeightRequest="100" />
+                    HeightRequest="50" />
             <Picker x:Name="CountryPicker" Title="Enter Country Name"/>
             <Picker x:Name="TourCategoryPicker" Title="Enter TourCategory Name"/>
             <Grid>
@@ -31,6 +31,19 @@
                         Clicked="OnEditButtonClicked"
                         MaximumWidthRequest="300"/>
             </Grid>
+            
+            <ListView x:Name="listView"
+                          Margin="20">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell Detail="{Binding Description}" />
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <Button Text="Add/Choose Activity" 
+                        MaximumWidthRequest="300"
+                        Clicked="OnChooseButtonClicked"/>            <Button Text="Delete Iteam"                     MaximumWidthRequest="300"                     Clicked="OnDeleteIteamButtonClicked"/>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

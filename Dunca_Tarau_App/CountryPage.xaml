@@ -20,15 +20,18 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <Button Text="Save Country" Grid.Column="0"
-MaximumWidthRequest="300"
- Clicked="OnSaveButtonClicked" />
-                <Button Text="Show on Map" Grid.Column="2"
-MaximumWidthRequest="300"
- Clicked="OnShowMapButtonClicked"></Button>
-                <Button Text="Delete Country" Grid.Column="1"
-MaximumWidthRequest="300"
- Clicked="OnDeleteButtonClicked" />
+                <Button Text="Save Country" 
+                        Grid.Column="0"
+                        MaximumWidthRequest="300"
+                        Clicked="OnSaveButtonClicked" />
+                <Button Text="Show on Map" 
+                        Grid.Column="2"
+                        MaximumWidthRequest="300"
+                        Clicked="OnShowMapButtonClicked"></Button>
+                <Button Text="Delete Country"
+                        Grid.Column="1"
+                        MaximumWidthRequest="300"
+                        Clicked="OnDeleteButtonClicked" />
             </Grid>
         </StackLayout>
     </ContentPage.Content>

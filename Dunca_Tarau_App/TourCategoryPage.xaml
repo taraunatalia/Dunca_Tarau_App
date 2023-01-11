@@ -5,9 +5,10 @@
              Title="TourCategoryPage">
     <ContentPage.Content>
         <StackLayout Margin="20">
-            <Editor Placeholder="Enter tour category name" Margin="20"
- Text="{Binding TourCategoryName}"
- HeightRequest="50" />
+            <Editor Placeholder="Enter tour category name" 
+                    Margin="20"
+                    Text="{Binding TourCategoryName}"
+                    HeightRequest="50" />
             
             <Grid>
                 <Grid.RowDefinitions>
@@ -19,12 +20,15 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <Button Text="Save Category" Grid.Column="0"
-MaximumWidthRequest="200"
- Clicked="OnSaveButtonClicked" />
-                <Button Text="Delete Category" Grid.Column="1"
-MaximumWidthRequest="200"
- Clicked="OnDeleteButtonClicked" />
+                <Button Text="Save Category" 
+                        Grid.Column="0"
+                        MaximumWidthRequest="300"
+                        Clicked="OnSaveButtonClicked" />
+                <Button Text="Delete Category"
+                        Grid.Column="1"
+                        MaximumWidthRequest="300"
+                        Clicked="OnDeleteButtonClicked" />
+               
             </Grid>
         </StackLayout>
     </ContentPage.Content>

@@ -1,4 +1,5 @@
 using Dunca_Tarau_App.Models;
+using Dunca_Tarau_App.Data;
 
 
 namespace Dunca_Tarau_App;
@@ -55,6 +56,33 @@ public partial class ListPage : ContentPage
 
 
 
+    async void OnChooseButtonClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new ActivityPage((TourList)
+       this.BindingContext)
+        {
+            BindingContext = new Activity()
+        });
+
+    }
+
+
+    async void OnDeleteIteamButtonClicked(object sender, EventArgs e)
+    {
+        Activity activity;
+        var tourList = (TourList)BindingContext;
+        if (listView.SelectedItem != null)
+        {
+            activity = listView.SelectedItem as Activity;
+            var listActivityAll = await App.Database.GetListActivities();
+            var ListActivity = listActivityAll.FindAll(x => x.ActivityID == activity.ID & x.TourListID == tourList.ID);
+            await App.Database.DeleteListActivityAsync(ListActivity.FirstOrDefault());
+            await Navigation.PopAsync();
+        }
+    }
+
+
+
     protected override async void OnAppearing()
     {
         base.OnAppearing();
@@ -70,9 +98,9 @@ public partial class ListPage : ContentPage
         TourCategoryPicker.ItemsSource = tems;
         TourCategoryPicker.ItemDisplayBinding = new Binding("TourCategoryName");
 
-        /*var shopl = (TourList)BindingContext;
+        var tourl = (TourList)BindingContext;
 
-        listView.ItemsSource = await App.Database.GetListProductsAsync(shopl.ID);*/
+        listView.ItemsSource = await App.Database.GetListActivitiesAsync(tourl.ID);
     }
 
 }
